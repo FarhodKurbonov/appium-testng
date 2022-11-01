@@ -91,6 +91,18 @@ Download it from https://github.com/appium/appium-inspector/releases
 }
 ```
 
+----
+### Install Dependencies
+You need to install neccessary java libs
+```yamlÎ
+appium java client
+selenium java binding
+guava
+apache common lang
+```
+
+
+
 
 
 
