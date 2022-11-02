@@ -9,7 +9,7 @@ import java.util.List;
 
 public class HandleDropDown {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //Set up session
         AppiumDriver appiumDriver = AppiumDriverExtensions.getAppiumDriver();
         //Go to Forms
@@ -25,6 +25,5 @@ public class HandleDropDown {
 
         //Get the text display on drop down
         System.out.println(firstDropDownMenuElementOption.getText());
-
     }
 }
