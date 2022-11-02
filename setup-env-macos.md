@@ -99,7 +99,9 @@ appium java client
 selenium java binding
 guava
 apache common lang
+PS: Need to add all selenium depended libs as lib in IDEA->Files-ProjectStructure->+->Add Lib->Select lib folder inside selenium unararchiec package
 ```
+
 
 
 

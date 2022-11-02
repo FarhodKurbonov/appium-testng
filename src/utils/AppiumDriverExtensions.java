@@ -1,19 +1,19 @@
-package test;
+package utils;
 
+import io.appium.java_client.AppiumBy;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.URL;
+import java.util.concurrent.TimeUnit;
 
-
-public class LaunchApp {
-    public static void main(String[] args) {
+public class AppiumDriverExtensions {
+    public static AppiumDriver  getAppiumDriver(){
+        //Driver instance
+        AppiumDriver appiumDriver = null;
         try {
-            //Driver instance
-            AndroidDriver androidDriver;
-
             //Set Desired Capability to Appium Server
             DesiredCapabilities dc = new DesiredCapabilities();
             dc.setCapability("platformName", "Android");
@@ -24,11 +24,11 @@ public class LaunchApp {
 
             URL appiumServer = new URL("http://localhost:4723");
 
-            androidDriver = new AndroidDriver(appiumServer, dc);
+            appiumDriver = new AndroidDriver(appiumServer, dc);
+            appiumDriver.manage().timeouts().implicitlyWait(30L, TimeUnit.SECONDS);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
+        return appiumDriver;
     }
 }
