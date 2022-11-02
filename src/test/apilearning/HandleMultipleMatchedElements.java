@@ -22,7 +22,7 @@ public class HandleMultipleMatchedElements {
         WebElement loginLabel = appiumDriver.findElement(AppiumBy.accessibilityId("Login"));
         loginLabel.click();
 
-        //3. Find Element that are matched to //*[@text="Login"]
+        //3. Find Element in fluent way
         WebDriverWait webDriverWait = new WebDriverWait(appiumDriver, Duration.ofSeconds(30L));
         webDriverWait.until(ExpectedConditions.numberOfElementsToBe(AppiumBy.xpath("//*[@text='Login']"), 2));
 
