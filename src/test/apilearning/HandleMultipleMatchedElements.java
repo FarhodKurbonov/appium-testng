@@ -35,11 +35,5 @@ public class HandleMultipleMatchedElements {
 
         loginTextsElements.get(LOGIN_TEXT_FORM_INDEX).click();
         System.out.println("Login menu text " + loginTextsElements.get(LOGIN_MENU_TEXT_INDEX).getText());
-
-
-//        WebElement firstLoginTextEl = appiumDriver.findElement(AppiumBy.xpath("//*[@text='Login']"));
-//        firstLoginTextEl.click();
-
     }
-
 }
