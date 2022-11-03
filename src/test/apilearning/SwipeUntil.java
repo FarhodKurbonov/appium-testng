@@ -32,17 +32,17 @@ public class SwipeUntil {
         double xStartPoint = swipeScreen.getRect().x + (swipeScreen.getSize().width*0.9);
         double xEndPoint = swipeScreen.getRect().x + (swipeScreen.getSize().width*0.1);
 
-        double yStartPoint = swipeScreen.getRect().y + (swipeScreen.getSize().height*0.5);
+        double yStartPoint = swipeScreen.getRect().y + (swipeScreen.getSize().height/2);
         while (true) {
         //Swipe from right to left
             try {
                 WebElement targetCard = swipeScreen.findElement(AppiumBy.xpath("//*[@text='EXTENDABLE']"));
-                wdWait.until(ExpectedConditions.visibilityOf(targetCard));
                 if(targetCard.isDisplayed()) break;
 
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             //Type of Pointer Input
             PointerInput finger = new PointerInput(PointerInput.Kind.TOUCH, "finger");
 
@@ -56,7 +56,7 @@ public class SwipeUntil {
             swipe.addAction(finger.createPointerDown(0));
 
             //Finger moves to end position
-            swipe.addAction(finger.createPointerMove(Duration.ofMillis(700), PointerInput.Origin.viewport(), (int)xEndPoint, (int) yStartPoint));
+            swipe.addAction(finger.createPointerMove(Duration.ofMillis(100), PointerInput.Origin.viewport(), (int)xEndPoint, (int) yStartPoint));
 
             //Get up Finger from Screen
             swipe.addAction(finger.createPointerUp(0));

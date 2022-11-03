@@ -10,9 +10,9 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 
 public class AppiumDriverExtensions {
-    public static AppiumDriver  getAppiumDriver(){
+    public static AndroidDriver  getAppiumDriver(){
         //Driver instance
-        AppiumDriver appiumDriver = null;
+        AndroidDriver appiumDriver = null;
         try {
             //Set Desired Capability to Appium Server
             DesiredCapabilities dc = new DesiredCapabilities();
