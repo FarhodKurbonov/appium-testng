@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.connection.ConnectionState;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NotFoundException;
+import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -39,7 +40,7 @@ public class MultipleNameInteraction {
         String base64output =   appiumDriver.stopRecordingScreen();
 
         //Put the app in background for 5 sec
-        appiumDriver.runAppInBackground(Duration.ofSeconds(-1));
+        appiumDriver.runAppInBackground(Duration.ofSeconds(10));
 
 
 
@@ -53,8 +54,10 @@ public class MultipleNameInteraction {
             appiumDriver.activateApp("com.wdiodemoapp");
 
             // Continue to with the App
-            WebDriverWait wait = new WebDriverWait(appiumDriver, Duration.ofSeconds(30L));
-            wait.until(ExpectedConditions.textToBePresentInElementLocated(AppiumBy.xpath("//*[text='OK']"), "Cool"));
+            WebDriverWait wait = new WebDriverWait(appiumDriver, Duration.ofSeconds(10));
+            By popup = AppiumBy.id("android:id/parentPanel");
+            wait.until(ExpectedConditions.visibilityOf(appiumDriver.findElement(popup)));
+            popup.findElement((SearchContext) AppiumBy.xpath("//*[@text='OK']"));
 
         } catch (NotFoundException notFoundException) {
             notFoundException.printStackTrace();
