@@ -14,7 +14,6 @@ import java.time.Duration;
 import java.util.Arrays;
 
 public class SwipeHorizontally {
-
     public static void main(String [] args) {
         //Create Session
         AppiumDriver appiumDriver = AppiumDriverExtensions.getAppiumDriver();
@@ -39,7 +38,5 @@ public class SwipeHorizontally {
 
         SwipeAction swipeAction = new SwipeAction(appiumDriver, (int)xStartPoint, (int)xEndPoint, (int)yStartPoint, (int)yStartPoint, swipeScreen);
         swipeAction.swipeHorizontally(5);
-
-
     }
 }
