@@ -11,7 +11,7 @@ public class LoginPage {
     private AppiumDriver appiumDriver;
     private final By usernameSelectorById = AppiumBy.accessibilityId("input-email");
     private final By passwordSelectorById = AppiumBy.accessibilityId("input-password");
-    private final By loginBtnSelectorById = AppiumBy.accessibilityId("button-Login");
+    private final By loginBtnSelectorById = AppiumBy.accessibilityId("button-LOGIN");
 
     public LoginPage(AppiumDriver appiumDriver) {
         this.appiumDriver = appiumDriver;
@@ -33,12 +33,17 @@ public class LoginPage {
         return appiumDriver.findElement(loginBtnSelectorById);
     }
 
+    public void inputUserName(String text){
+        this.getUsername().sendKeys(text);
+    }
 
-    //    public LoginPage(AppiumDriver appiumDriver) {
-//        this.appiumDriver = appiumDriver;
-//    }
-//    LoginPage loginPage = new LoginPage(appiumDriver);
-//    loginPage.username().sendKeys("username");
+    public void inputPassword(String text) {
+        this.getPassword().sendKeys(text);
+    }
+
+    public void clickOnLoginBtn(){
+        this.getLoginBtn().click();
+    }
 
 
 
