@@ -1,0 +1,43 @@
+plugins {
+    id 'java'
+    id 'io.qameta.allure' version '2.9.3'
+}
+
+group 'com.fkurbonov'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    allureVersion = '2.17.3'
+}
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation 'io.appium:java-client:8.2.0'
+    implementation('org.seleniumhq.selenium:selenium-java:4.5.3')
+    implementation group: 'commons-io', name: 'commons-io', version: '2.11.0'
+    testImplementation('org.slf4j:slf4j-simple:2.0.3')
+    testImplementation('org.testng:testng:7.6.1')
+}
+
+test {
+    useTestNG()
+}
+
+allure {
+    autoconfigure = true
+    version = "${allureVersion}"
+
+    useTestNG {
+        version = "${allureVersion}"
+    }
+}
