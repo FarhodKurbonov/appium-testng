@@ -11,7 +11,7 @@ public class AppiumDriverExtensions {
         //Driver instance
         AndroidDriver appiumDriver = null;
         try {
-            //Set Desired Capability to Appium Server
+            //Set Desired Capability to Appium ServerÅ
             DesiredCapabilities dc = new DesiredCapabilities();
             dc.setCapability(MobileCapabilityExtension.APPIUM_PLATFORM_NAME, "Android");
             dc.setCapability(MobileCapabilityExtension.APPIUM_AUTOMATION_NAME,"UIAutomator2");
